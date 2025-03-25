@@ -24,15 +24,13 @@ import {
 import { FaFilter, FaSearch, FaPlus, FaBolt, FaEllipsisV } from 'react-icons/fa';
 
 // Component imports
-// import UserManagement from './UserManagement';
 import RoleManagement from './RoleManagement';
 import SubscriptionManagement from './Subscription';
 import SystemSettings from './SystemConfiguration';
 import ComplianceSettings from './ComplianceSettings';
 import DrawerNavigation from './DrawerNavigation';
-
 import OrganizationForm from './OrganizationForm';
-// import AddMemberForm from './AddMemberForm';
+import RecruiterApp from './Recruiters'; // Import the Recruiters component
 
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -55,7 +53,12 @@ const AdminDashboard = () => {
   };
 
   const components = [
- 
+    {
+      name: <span className="text-gray-700 font-bold text-sm">Recruiter Management</span>,
+      icon: <Users size={20} className="text-green-600" />,
+      sidebarColor: '#22C55E',
+      component: <RecruiterApp />
+    },
     {
       name: <span className="text-gray-700 font-bold text-sm">Role Management</span>,
       icon: <Shield size={20} className="text-purple-600" />,
@@ -81,6 +84,7 @@ const AdminDashboard = () => {
       component: <ComplianceSettings />
     }
   ];
+
   const handleExpandCollapse = () => {
     setIsExpanded(!isExpanded);
     const newOpenSections = {};
@@ -119,7 +123,7 @@ const AdminDashboard = () => {
     if (!drawerOpen || selectedComponent === null) return null;
 
     return (
-      <div className="fixed inset-0 z-50 overflow-hidden">
+      <div className="flex min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="absolute inset-0 bg-black bg-opacity-50" onClick={closeDrawer}></div>
         <div className="absolute right-0 top-0 h-full w-full  bg-white shadow-xl transform transition-transform duration-300">
           <div className="p-6">

@@ -1,4 +1,4 @@
-// File: D:\projects\FH99-new-master\FH99-new-master\frontend\src\app\layout.js
+// File: D:\projects\FH99-new-master\FH99-new-master\faas\frontend\src\app\layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
