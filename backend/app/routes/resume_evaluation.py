@@ -1,12 +1,7 @@
 from fastapi import APIRouter, File, UploadFile, Form
-# from Core.prompt_engineering import PromptEngineering
 from ..core.prompt_engineering import PromptEngineering
-# from services.llm_service import LLMService
 from app.services.llm_service import LLMService
-# from utils.helpers import extract_text_from_pdf, extract_text_from_word, extract_resume_sections
-# from app.utils.helpers import extract_text_from_pdf, extract_text_from_word, extract_resume_sections
 from app.utils.helpers import process_pdf, handle_role_selection
-
 from fastapi.responses import JSONResponse
 from ..core.Config import logger 
 import logging
